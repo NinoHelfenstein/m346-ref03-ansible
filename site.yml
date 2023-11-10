@@ -1,0 +1,16 @@
+- host: all
+  - name: Install Maeven
+    ansible.builtin.apt:
+      name: maven
+      state: present
+      
+  - name: Clone Porject
+    ansible.builtin.git:
+    repo: https://gitlab.com/bbwrl/m346-ref-card-03.git
+    dest: /ref03
+
+  - name: Build Ref03
+    ansible.builtin.command:
+      cmd: mvn clean install
+    args:
+      chdir: /ref03
