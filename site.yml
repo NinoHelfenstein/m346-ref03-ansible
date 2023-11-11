@@ -19,7 +19,7 @@
     ansible.builtin.command:
       cmd: mvn clean install
       chdir: /ref03
-     
+ 
   - name: Start Ref03
     ansible.builtin.command:
       cmd: java -DB_USERNAME="root" -DB_PASSWORD="root_pwd" -jar  target/architecture-refcard-03-0.0.1-SNAPSHOT.jar &
