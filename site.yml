@@ -1,4 +1,4 @@
-- host: all
+- hosts: all
   tasks:
     - name: Install Maven and Docker
       ansible.builtin.apt:
