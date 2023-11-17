@@ -1,9 +1,0 @@
-- name: Start Ref03 Java Application
-  ansible.builtin.shell:
-    cmd: >
-      java -DB_USERNAME='jokedbuser' -DB_PASSWORD='123456' -DB_URL="jdbc:mariadb://192.168.68.199:3306/jokedb" -jar /ref03/target/architecture-refcard-03-0.0.1-SNAPSHOT.jar &
-  async: 0
-  poll: 0
-  become: yes
-  args:
-    chdir: /ref03

@@ -12,3 +12,5 @@
   ansible.builtin.command:
     cmd: mvn clean install
     chdir: /ref03
+  args:
+    creates: /ref03/target/architecture-refcard-03-0.0.1-SNAPSHOT.jar
