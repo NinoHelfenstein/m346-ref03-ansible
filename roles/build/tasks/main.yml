@@ -1,0 +1,14 @@
+- name: Install Maven
+  ansible.builtin.apt:
+    name: maven
+    state: present
+
+- name: Clone Ref03 repository
+  ansible.builtin.git:
+    repo: https://gitlab.com/bbwrl/m346-ref-card-03.git
+    dest: /ref03
+
+- name: Build Ref03 Java Project
+  ansible.builtin.command:
+    cmd: mvn clean install
+    chdir: /ref03

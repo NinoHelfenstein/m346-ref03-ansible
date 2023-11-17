@@ -44,10 +44,11 @@ sudo apt-get install ansible
 ```
 
 ### Installation
+1. change the ip in hosts to your desired location
 
-1. Get a free API Key at [https://example.com](https://example.com)
+2. run ```ansible-playbook site.yml```
 
-2. Clone the repo
+3. Clone the repo
 
 ```sh
 git clone https://github.com/your_username_/Project-Name.git

@@ -1,2 +1,5 @@
-[web]
-light-doe ansible_host=192.168.68.163 ansible_user=user
+[build]
+ref03 ansible_host=192.168.68.198 ansible_user=nino
+
+[maria]
+maria-vm ansible_host=192.168.68.199 ansible_user=nino

@@ -1,0 +1,10 @@
+- hosts: maria
+  become: yes
+  roles:
+    - maria
+
+- hosts: build
+  become: yes
+  roles:
+    - build
+    - run

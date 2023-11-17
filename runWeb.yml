@@ -1,0 +1,26 @@
+- name: Run MongoDB playbook
+  hosts: mongo
+  tasks:
+    - name: Include MongoDB playbook
+      include: mongo.yml
+
+    - name: Wait for MongoDB playbook completion
+      async_status:
+        jid: "{{ mongo_playbook_results.ansible_job_id }}"
+      register: mongo_playbook_status
+      until: mongo_playbook_status.finished
+      retries: 60
+      delay: 10
+
+- name: Start Ref03
+  hosts: build
+  tasks:
+    - name: Get MongoDB host IP
+      set_fact:
+        mongo_host_ip: "{{ hostvars[groups['mongo'][0]]['ansible_host'] }}"
+    
+    - name: Start Ref03
+      ansible.builtin.shell:
+        cmd: "java -DB_USERNAME='root' -DB_PASSWORD='root_pwd' -DB_URL='{{mongo_host_ip}}' -jar /target/architecture-refcard-03-0.0.1-SNAPSHOT.jar &"
+      args:
+        chdir: /ref03
