@@ -1,7 +1,6 @@
-- name: Start Ref03 Java Application
-  ansible.builtin.shell:
-    cmd: >
-      java -DDB_USERNAME='jokedbuser' -DDB_PASSWORD='123456' -DDB_URL="jdbc:mariadb://192.168.68.210:3306/jokedb" -jar /ref03/target/architecture-refcard-03-0.0.1-SNAPSHOT.jar &
-  become: yes
-  args:
-    chdir: /ref03
+- name: Start the Spring Boot app using systemd
+  systemd:
+    name: "ref03"
+    state: started
+    enabled: yes
+  become: yes  

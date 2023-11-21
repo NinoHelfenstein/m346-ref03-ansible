@@ -1,5 +1,5 @@
 [build]
-ref03 ansible_host=192.168.68.198 ansible_user=nino
+ref03 ansible_host=192.168.68.247 ansible_user=nino
 
 [maria]
-maria-vm ansible_host=192.168.68.199 ansible_user=nino
+maria-vm ansible_host=192.168.68.248 ansible_user=nino

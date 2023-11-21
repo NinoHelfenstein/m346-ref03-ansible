@@ -14,3 +14,9 @@
     chdir: /ref03
   args:
     creates: /ref03/target/architecture-refcard-03-0.0.1-SNAPSHOT.jar
+
+- name: Create a systemd service file
+  template:
+    src: "templates/systemd-service.j2"
+    dest: "/etc/systemd/system/ref03.service"
+  become: yes
