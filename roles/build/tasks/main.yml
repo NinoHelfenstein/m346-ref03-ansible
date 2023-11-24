@@ -20,3 +20,10 @@
     src: "templates/systemd-service.j2"
     dest: "/etc/systemd/system/ref03.service"
   become: yes
+
+- name: Start and  enable ref03 service
+  systemd:
+    name: ref03
+    enabled: yes
+    state: started
+    daemon_reload: yes

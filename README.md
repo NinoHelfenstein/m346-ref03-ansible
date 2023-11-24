@@ -9,33 +9,14 @@
 </p>
 
 
-
-## Table Of Contents
-
-- [Table Of Contents](#table-of-contents)
-- [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Creating A Pull Request](#creating-a-pull-request)
-- [Authors](#authors)
-
-## Built With
-
-- MongoDB
-- Maven
-- Ansible
-- Docker
-- SpringBoot
-
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To setup this project follow the instructions of the prerequisites and installations
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+For this project you only need ansible and ssh working on your local machine. 
+For the target devices you need two working, with ssh accessible machines.
 
 * ansible
 
@@ -44,31 +25,11 @@ sudo apt-get install ansible
 ```
 
 ### Installation
-1. change the ip in hosts to your desired location
+1. Change the IP addresses in [hosts](./hosts) to your desired locations.
 
-2. run ```ansible-playbook site.yml```
+2. Run ```ansible-playbook -i hosts build.yml``` on your local machine.
 
-3. Clone the repo
-
-```sh
-git clone https://github.com/your_username_/Project-Name.git
-```
-
-3. Install NPM packages
-
-```sh
-npm install
-```
-
-4. Enter your API in `config.js`
-
-```JS
-const API_KEY = 'ENTER YOUR API';
-```
-
-### Creating A Pull Request
-
-
+3. After the playbook run successfully you should be able to see the working spring boot application on port ```8080``` of your ref03 machine.
 
 ## Authors
 
